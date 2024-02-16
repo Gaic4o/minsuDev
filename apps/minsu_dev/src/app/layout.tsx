@@ -26,7 +26,7 @@ export default function RootLayout({
       <div className={`min-h-screen mx-auto bg-white ${montserrat.className} w-full mob:w-[880px]`}>
           <div className="flex flex-1 flex-col">
               <Header/>
-              {}
+              {children}
               <Footer />
           </div>
       </div>
