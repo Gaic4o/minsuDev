@@ -7,17 +7,6 @@ const PostList: FC = () => {
 
     return (
         <>
-            <div className="flex flex-wrap w-full justify-center mob:w-[750px] mt-3">
-                <Tag name={'Component'} />
-                <Tag name={'Javascript'} />
-                <Tag name={'Typescript'} />
-                <Tag name={'Component'} />
-                <Tag name={'Javascript'} />
-                <Tag name={'Typescript'} />
-                <Tag name={'Component'} />
-                <Tag name={'Javascript'} />
-                <Tag name={'Typescript'} />
-            </div>
             <div className="mt-1">
                 <Card />
                 <Card />

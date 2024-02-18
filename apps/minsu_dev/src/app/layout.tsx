@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
       <html lang={'ko'}>
       <head/>
-      <body className="m-0">
-      <div className={`min-h-screen mx-auto bg-white ${montserrat.className} w-full mob:w-[880px]`}>
+      <body className="m-0 bg-gray900">
+      <div className={`min-h-screen mx-auto ${montserrat.className} w-full mob:w-[880px]`}>
           <div className="flex flex-1 flex-col">
               <Header/>
               {children}
@@ -34,3 +34,4 @@ export default function RootLayout({
       </html>
 );
 }
+
