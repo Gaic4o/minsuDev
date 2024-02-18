@@ -4,9 +4,9 @@ import { cn } from '@/utils/tailwind';
 
 const Header = () => {
     return (
-        <header className="flex items-center justify-between px-5 border-b border-[#cecfd3]">
+        <header className="flex items-center justify-between px-5 pt-4">
             <div>
-                <Link href={'/'} className="text-2xl font-bold text-[#70aaaa] no-underline">
+                <Link href={'/'} className="text-2xl font-bold text-thinGray500 no-underline">
                     minsuDev
                 </Link>
             </div>
@@ -16,7 +16,7 @@ const Header = () => {
                     href="https://github.com/Gaic4o"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={cn('cursor-pointer text-black no-underline', 'mr-4')}
+                    className={cn('cursor-pointer text-thinGray100 no-underline', 'mr-4')}
                 >
                     About
                 </Link>
@@ -24,7 +24,7 @@ const Header = () => {
                     href="https://github.com/Gaic4o"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cursor-pointer text-black no-underline"
+                    className="cursor-pointer text-thinGray100 no-underline"
                 >
                     Github
                 </Link>
