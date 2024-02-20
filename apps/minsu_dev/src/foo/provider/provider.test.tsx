@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { useQueryClient } from '@tanstack/react-query';
-import Providers from '.';
+import Providers from './index';
 
 function TestQueryClient() {
   const queryClient = useQueryClient();
