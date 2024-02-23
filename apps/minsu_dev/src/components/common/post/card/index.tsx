@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Post } from '@/types';
 import { format } from 'date-fns';
 
-type PostCardProps = Omit<Post, 'category' | 'tags'> & {
+type PostCardProps = Omit<Post, 'tags'> & {
   className?: string;
 };
 
