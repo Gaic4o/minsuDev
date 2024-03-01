@@ -1,6 +1,8 @@
 import { createClient as createBrowserClient } from './client';
 import { createClient as createServerClient } from './server';
 import { cache } from 'react';
+import { createClient } from '@/utils/supabase/client';
+import { useQuery } from '@tanstack/react-query';
 
 const initializeSupabase = () =>
   typeof window === 'undefined' ? createServerClient() : createBrowserClient();
@@ -9,6 +11,8 @@ interface GetPostsParams {
   tag?: string;
   page?: number;
 }
+
+const supabase = createClient();
 
 export const getPosts = cache(async ({ tag, page = 0 }: GetPostsParams) => {
   const supabase = initializeSupabase();
@@ -38,3 +42,12 @@ export const getPost = cache(async (id: string) => {
     tags: JSON.parse(data[0].tags) as string[],
   };
 });
+
+export const useTags = () =>
+  useQuery({
+    queryKey: ['tags'],
+    queryFn: async () => {
+      const { data } = await supabase.from('Post').select('tags');
+      return Array.from(new Set(data?.flatMap(d => JSON.parse(d.tags))));
+    },
+  });
