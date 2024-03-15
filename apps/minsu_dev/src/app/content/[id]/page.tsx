@@ -1,4 +1,5 @@
 import { MarkdownViewer } from '@/components/common/markdown';
+import ContentComment from '@/foo/content/comment';
 import { getPost } from '@/utils/supabase/post';
 import { format } from 'date-fns';
 import Link from 'next/link';
@@ -29,6 +30,8 @@ export default async function Content({ params }: ContentProps) {
         </div>
         <MarkdownViewer source={content.content} className="min-w-full" />
       </div>
+
+      <ContentComment />
     </div>
   );
 }
