@@ -46,7 +46,7 @@ const PostCard: FC<PostCardProps> = ({
 
   return (
     <div className="w-full px-3 pb-7.5 border-b border-[#cecfd3] mob:w-[700px]">
-      <Link href={`/posts/${id}`} passHref>
+      <Link href={`/content/${id}`} passHref>
         <div className="cursor-pointer">
           <PostImage url={preview_image_url ?? ''} title={title} />
           <PostContent title={title} date={formattedDate} content={content} />
