@@ -1,24 +1,20 @@
 import Link from 'next/link';
-import { cn } from '@/utils/tailwind';
+import styles from './header.module.css';
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between pt-4">
+    <header className={styles.header}>
       <div>
-        <Link
-          href={'/'}
-          className="text-2xl font-bold text-thinGray500 no-underline"
-        >
+        <Link className={styles.title} prefetch href={'/'} passHref>
           minsuDev
         </Link>
       </div>
-
       <div>
         <Link
           href="https://github.com/Gaic4o"
           target="_blank"
           rel="noopener noreferrer"
-          className={cn('cursor-pointer text-thinGray100 no-underline', 'mr-4')}
+          className={`${styles.link} ${styles.linkWithMargin}`}
         >
           About
         </Link>
@@ -26,7 +22,7 @@ const Header = () => {
           href="https://github.com/Gaic4o"
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer text-thinGray100 no-underline"
+          className={styles.link}
         >
           Github
         </Link>

@@ -10,6 +10,7 @@ import { useRef } from 'react';
 import ReactSelect from 'react-select/creatable';
 import { Controller, useForm } from 'react-hook-form';
 import Button from '@/components/common/button';
+import styles from './form.module.css';
 
 const schema = yup.object({
   title: yup.string().required('제목을 입력해주세요.'),
@@ -57,70 +58,57 @@ const WriteForm = () => {
   };
 
   return (
-    <div className={'container flex items-center flex-col pb-20 pt-12'}>
-      <h1 className={'text-2xl font-medium text-thinGray100 mb-5'}>
-        글 생성하기
-      </h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={'flex flex-col gap-3'}>
-          <Controller
-            name="title"
-            control={control}
-            render={({ field }) => (
-              <Input
-                type="text"
-                className={'mb-5'}
-                placeholder="제목"
-                {...field}
-              />
-            )}
-          />
-          {errors.title && <p className="text-white">{errors.title.message}</p>}
-
-          <Input
-            type="file"
-            className={'mb-5 text-white'}
-            accept="image/*"
-            ref={fileRef}
-          />
-
-          <Controller
-            name="tags"
-            control={control}
-            render={({ field }) => (
-              <ReactSelect
-                className={'mb-5'}
-                options={(existingTags ?? []).map(tag => ({
-                  label: tag,
-                  value: tag,
-                }))}
-                isMulti
-                onChange={e => setValue('tags', e ? e.map(x => x.value) : [])}
-                placeholder="태그"
-              />
-            )}
-          />
-          {errors.tags && <p className="text-white">{errors.tags.message}</p>}
-
-          <Controller
-            name="content"
-            control={control}
-            render={({ field }) => (
-              <MarkdownEditor
-                height={500}
-                value={field.value}
-                onChange={s => field.onChange(s)}
-              />
-            )}
-          />
-          {errors.content && (
-            <p className="text-white">{errors.content.message}</p>
+    <div className={styles.formContainer}>
+      <h2 className={styles.title}>글 생성하기</h2>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="title"
+          control={control}
+          render={({ field }) => (
+            <Input type="text" placeholder="제목" {...field} />
           )}
+        />
+        {errors.title && (
+          <p className={styles.errorMessage}>{errors.title.message}</p>
+        )}
+        <Input type="file" accept="image/*" ref={fileRef} />
+        <Controller
+          name="tags"
+          control={control}
+          render={({ field }) => (
+            <ReactSelect
+              className={styles.select}
+              options={(existingTags ?? []).map(tag => ({
+                label: tag,
+                value: tag,
+              }))}
+              isMulti
+              onChange={e => setValue('tags', e ? e.map(x => x.value) : [])}
+              placeholder="태그"
+            />
+          )}
+        />
+        {errors.tags && (
+          <p className={styles.errorMessage}>{errors.tags.message}</p>
+        )}
 
-          <Button type={'submit'} className={'mt-4'}>
-            작성하기
-          </Button>
-        </div>
+        <Controller
+          name="content"
+          control={control}
+          render={({ field }) => (
+            <MarkdownEditor
+              className={styles.editor}
+              height={500}
+              value={field.value}
+              onChange={s => field.onChange(s)}
+            />
+          )}
+        />
+        {errors.content && (
+          <p className={styles.errorMessage}>{errors.content.message}</p>
+        )}
+
+        <Button type={'submit'}>작성하기</Button>
       </form>
     </div>
   );

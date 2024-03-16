@@ -10,6 +10,7 @@ import {
   FetchPostsResult,
   PostListProps,
 } from '@/types/post';
+import styles from './list.module.css';
 
 const fetchPosts = async ({
   tag,
@@ -51,7 +52,7 @@ const PostList: FC<PostListProps> = ({ tag, initalPosts }) => {
   }, [inView, hasNextPage, fetchNextPage]);
 
   return (
-    <div className="mt-1">
+    <div className={styles.postListContainer}>
       {postPages?.pages
         .flatMap(page => page.posts)
         .map(post => <PostCard key={post.id} {...post} />)}

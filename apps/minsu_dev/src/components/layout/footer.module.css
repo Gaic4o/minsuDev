@@ -1,0 +1,14 @@
+.link {
+  text-decoration: none;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #fcfcfc;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+}

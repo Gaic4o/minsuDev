@@ -2,9 +2,5 @@
   "editor.codeActionOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll.eslint": true
-  },
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  }
 }
