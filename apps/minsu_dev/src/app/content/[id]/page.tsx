@@ -6,8 +6,20 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import styles from './id.module.css';
 import { FC } from 'react';
+import { Metadata } from 'next';
 
 type ContentProps = { params: { id: string } };
+
+export const generateMetadata = async ({
+  params,
+}: ContentProps): Promise<Metadata> => {
+  const content = await getPost(params.id);
+
+  return {
+    title: content?.title,
+    description: `${content?.tags} 관한 블로그 포스트 글 입니다.`,
+  };
+};
 
 const TagList: FC<{ tags: string[] }> = ({ tags }) => {
   return (
