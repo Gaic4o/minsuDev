@@ -13,22 +13,22 @@ interface UserInfoProps {
 
 const supabase = createClient();
 const UserInfo: FC<UserInfoProps> = ({ user }) => {
-  const router = useRouter();
+  const { push } = useRouter();
 
   const handleLogout = useCallback(async () => {
     await supabase.auth.signOut();
-    router.push('/');
-  }, [router]);
+    push('/');
+  }, [push]);
 
   return (
-    <Fragment>
+    <>
       <div className={styles.infoContainer}>
         <b className={styles.email}>{user.email} 님 환영합니다.</b>
       </div>
-      <Button type={'button'} onClick={handleLogout}>
+      <Button type="button" onClick={handleLogout}>
         로그아웃
       </Button>
-    </Fragment>
+    </>
   );
 };
 
