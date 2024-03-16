@@ -13,3 +13,7 @@
   color: #fcfcfc;
   font-size: 1.4rem;
 }
+
+.errorMessage {
+  color: #fff;
+}
