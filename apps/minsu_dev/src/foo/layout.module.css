@@ -1,0 +1,38 @@
+.container {
+  background-color: #1c1c1e;
+  margin: 0px;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  background-color: #1c1c1e;
+  width: 100%;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 730px) {
+  .layout {
+    width: 880px;
+  }
+}
+
+.notFoundWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+}
+
+.notFoundTitle {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

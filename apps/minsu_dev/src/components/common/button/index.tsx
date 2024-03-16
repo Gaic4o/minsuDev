@@ -1,15 +1,10 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
-import { cn } from '@/utils/tailwind';
+import styles from './button.module.css';
 
 type ButtonProps = ComponentPropsWithoutRef<'button'>;
 const Button: FC<ButtonProps> = ({ className, children, ...rest }) => {
   return (
-    <button
-      className={cn(
-        'w-full rounded-md transition-all bg-white py-2 text-gray-800 hover:bg-white-700',
-        className,
-      )}
-    >
+    <button className={styles.button} {...rest}>
       {children}
     </button>
   );

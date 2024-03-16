@@ -1,9 +1,11 @@
 'use client';
 
-import { Fragment } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import Button from '@/components/common/button';
+import Input from '@/components/common/input';
+import styles from './loginForm.module.css';
 
 interface LoginFormInputs {
   email: string;
@@ -33,33 +35,27 @@ const LoginForm = () => {
   };
 
   return (
-    <Fragment>
-      <div className={'flex flex-col gap-8'}>
-        <h1 className={'text'}>로그인</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            <input
-              type="text"
-              placeholder={'이메일'}
-              {...register('email', { required: true })}
-            />
-            <input
-              type={'password'}
-              placeholder={'비밀번호'}
-              {...register('password', { required: true })}
-            />
-          </div>
-          {errors.email && <span>이메일을 입력해주세요.</span>}
-          {errors.password && <span>비밀번호를 입력해주세요.</span>}
-          <button
-            type={'submit'}
-            className="mt-4 w-full rounded-md bg-gray-800 py-2 text-white"
-          >
-            로그인
-          </button>
-        </form>
-      </div>
-    </Fragment>
+    <div className={styles.loginFormContainer}>
+      <h2 className={styles.formTitle}>로그인</h2>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.inputContainer}>
+          <Input
+            type="text"
+            className={styles.inputMargin}
+            placeholder={'이메일'}
+            {...register('email', { required: true })}
+          />
+          <Input
+            type={'password'}
+            placeholder={'비밀번호'}
+            {...register('password', { required: true })}
+          />
+        </div>
+        {errors.email && <span>이메일을 입력해주세요.</span>}
+        {errors.password && <span>비밀번호를 입력해주세요.</span>}
+        <Button type={'submit'}>로그인</Button>
+      </form>
+    </div>
   );
 };
 

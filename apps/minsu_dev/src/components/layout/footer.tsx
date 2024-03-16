@@ -1,16 +1,18 @@
+import Link from 'next/link';
 import { FC } from 'react';
+import styles from './footer.module.css';
 
 const Footer: FC = () => {
   return (
-    <footer className="flex content-center justify-center p-4">
-      <a
+    <footer className={styles.footer}>
+      <Link
         href="https://github.com/Gaic4o"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-lg leading-5 font-bold text-thinGray100 no-underline"
+        className={styles.link}
       >
         ©MinsuKim
-      </a>
+      </Link>
     </footer>
   );
 };

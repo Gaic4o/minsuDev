@@ -4,6 +4,8 @@ import { FC, Fragment, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
 import { User } from '@supabase/supabase-js';
+import Button from '@/components/common/button';
+import styles from './userInfo.module.css';
 
 interface UserInfoProps {
   user: User;
@@ -20,14 +22,12 @@ const UserInfo: FC<UserInfoProps> = ({ user }) => {
 
   return (
     <Fragment>
-      <div className={'flex flex-col gap-2'}>
-        <div className={'mb-8'}>
-          <b>{user.email}</b>님 환영합니다.
-        </div>
+      <div className={styles.infoContainer}>
+        <b className={styles.email}>{user.email} 님 환영합니다.</b>
       </div>
-      <button type={'button'} onClick={handleLogout}>
+      <Button type={'button'} onClick={handleLogout}>
         로그아웃
-      </button>
+      </Button>
     </Fragment>
   );
 };

@@ -4,6 +4,8 @@ import './globals.css';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Providers from '@/foo/provider';
+import StyledComponentsRegistry from '@/foo/provider/styledComponentsRegistry';
+import styles from '../foo/layout.module.css';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -23,18 +25,18 @@ export default function RootLayout({
   return (
     <html lang={'ko'}>
       <head />
-      <body className="m-0 bg-gray900">
-        <div
-          className={`min-h-screen mx-auto ${montserrat.className} w-full mob:w-[880px]`}
-        >
-          <div className="flex flex-1 flex-col">
-            <Providers>
-              <Header />
-              {children}
-              <Footer />
-            </Providers>
+      <body>
+        <StyledComponentsRegistry>
+          <div className={styles.container}>
+            <div className={`${styles.layout} ${montserrat.className}`}>
+              <Providers>
+                <Header />
+                {children}
+                <Footer />
+              </Providers>
+            </div>
           </div>
-        </div>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

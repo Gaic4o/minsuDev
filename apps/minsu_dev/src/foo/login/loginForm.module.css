@@ -1,0 +1,15 @@
+.loginFormContainer {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  color: #fcfcfc;
+  font-size: 1.4rem;
+}
