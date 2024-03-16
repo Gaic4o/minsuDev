@@ -20,11 +20,7 @@ const ContentComment: React.FC = () => {
     };
   }, []);
 
-  return (
-    <div>
-      <div ref={commentsElRef} />;
-    </div>
-  );
+  return <div ref={commentsElRef} />;
 };
 
 export default ContentComment;
