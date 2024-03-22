@@ -14,14 +14,6 @@ const Header = () => {
           href="https://github.com/Gaic4o"
           target="_blank"
           rel="noopener noreferrer"
-          className={`${styles.link} ${styles.linkWithMargin}`}
-        >
-          About
-        </Link>
-        <Link
-          href="https://github.com/Gaic4o"
-          target="_blank"
-          rel="noopener noreferrer"
           className={styles.link}
         >
           Github

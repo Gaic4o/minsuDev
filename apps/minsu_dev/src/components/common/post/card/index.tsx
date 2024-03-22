@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Post } from '@/types';
 import { format } from 'date-fns';
 import styles from './card.module.css';
+import { truncate } from '@/utils';
 
 type PostCardProps = Omit<Post, 'tags'> & {
   className?: string;
@@ -23,7 +24,7 @@ const PostContent: FC<{ title: string; date: string; content: string }> = ({
   <>
     <p className={styles.postTitle}>{title}</p>
     <p className={styles.postDate}>{date}</p>
-    <p className={styles.postContent}>{content}</p>
+    <p className={styles.postContent}>{truncate(content, 100)}</p>
   </>
 );
 
