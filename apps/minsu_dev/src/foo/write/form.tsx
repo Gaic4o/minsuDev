@@ -56,7 +56,7 @@ const WriteForm = () => {
     const result = await response.json();
     if (result.id) router.push(`/posts/${result.id}`);
   };
-
+  // TODO: Minsu Source map test
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.title}>글 생성하기</h2>
