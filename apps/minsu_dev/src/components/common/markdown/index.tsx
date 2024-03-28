@@ -20,7 +20,14 @@ export const MarkdownEditor = ({ ...rest }: MDEditorProps) => (
 );
 
 export const MarkdownViewer = ({ ...rest }: MarkdownPreviewProps) => (
-  <div>
-    <MDViewer style={{ color: 'white', background: '#1C1C1E' }} {...rest} />
+  <div data-color-mode="dark">
+    <MDViewer
+      style={{
+        color: 'white',
+        background: '#1C1C1E',
+        fontSize: 16.5,
+      }}
+      {...rest}
+    />
   </div>
 );
