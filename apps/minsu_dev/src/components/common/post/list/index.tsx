@@ -1,7 +1,6 @@
 'use client';
 import { FC, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import PostCard from '@/components/common/post/card';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getPosts } from '@/utils/supabase/post';
 import { QUERY_KEYS } from '@/utils/supabase/queryKey';
@@ -11,6 +10,7 @@ import {
   PostListProps,
 } from '@/types/post';
 import styles from './list.module.css';
+import { PostCard } from '../card';
 
 const fetchPosts = async ({
   tag,
