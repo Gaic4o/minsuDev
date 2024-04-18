@@ -10,7 +10,7 @@ import {
   PostListProps,
 } from '@/types/post';
 import styles from './list.module.css';
-import { PostCard } from '../card';
+import { PostCard } from '@/components/common/post/card';
 
 const fetchPosts = async ({
   tag,
