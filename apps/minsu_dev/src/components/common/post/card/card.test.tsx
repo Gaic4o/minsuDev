@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PostCard from '.';
+import { PostCard } from '.';
 
 describe('PostCard Component', () => {
   const mockPost = {
