@@ -2,7 +2,7 @@ import { Post } from '@/types';
 
 export type PostListProps = {
   tag?: string;
-  initalPosts?: Post[];
+  initialPosts?: Post[];
 };
 
 export interface FetchPostsParams {
