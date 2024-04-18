@@ -7,14 +7,14 @@ import { PostCard } from '@/components/common/post/card';
 import { useInfinitePosts } from './list.hooks';
 import { PostListProps } from './list.types';
 
-const PostList: FC<PostListProps> = ({ tag, initalPosts }) => {
+const PostList: FC<PostListProps> = ({ tag, initialPosts }) => {
   const { ref, inView } = useInView();
   const {
     data: postPages,
     fetchNextPage,
     hasNextPage,
     // @ts-ignore useInfiniteQuery query type added later
-  } = useInfinitePosts(tag, initalPosts);
+  } = useInfinitePosts(tag, initialPosts);
 
   useEffect(() => {
     if (inView && hasNextPage) fetchNextPage();
