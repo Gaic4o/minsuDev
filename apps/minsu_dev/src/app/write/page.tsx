@@ -1,7 +1,7 @@
-import WriteForm from '@/foo/write/form';
 import { createClient } from '@/utils/supabase/server';
 import { cookies } from 'next/headers';
-import { Login } from '@/foo/login';
+import { Login } from '@/foo/write/login';
+import { WriteForm } from '@/foo/write/writeForm.tsx';
 
 export default async function Write() {
   const supabase = createClient(cookies());
