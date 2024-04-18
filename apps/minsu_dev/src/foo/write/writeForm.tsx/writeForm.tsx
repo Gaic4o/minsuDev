@@ -5,12 +5,12 @@ import { MarkdownEditor } from '@/components/common/markdown';
 import { useTags } from '@/utils/supabase/post';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
 import ReactSelect from 'react-select/creatable';
 import { Controller, useForm } from 'react-hook-form';
 import Button from '@/components/common/button';
-import styles from './form.module.css';
+import styles from './writeForm.module.css';
+import { useCreatePost } from './writeForm.hooks';
 
 const schema = yup.object({
   title: yup.string().required('제목을 입력해주세요.'),
@@ -19,8 +19,9 @@ const schema = yup.object({
 });
 
 const WriteForm = () => {
-  const router = useRouter();
   const fileRef = useRef<HTMLInputElement>(null);
+  const { data: existingTags } = useTags();
+  const createPost = useCreatePost();
 
   const {
     control,
@@ -36,27 +37,16 @@ const WriteForm = () => {
     },
   });
 
-  const { data: existingTags } = useTags();
-
+  // TODO: I'm not sure about the type yet.
   const onSubmit = async (data: any) => {
-    const formData = new FormData();
-    formData.append('title', data.title);
-    formData.append('tags', JSON.stringify(data.tags));
-    formData.append('content', data.content);
-
-    if (fileRef.current?.files?.[0]) {
-      formData.append('preview_image', fileRef.current.files[0]);
-    }
-
-    const response = await fetch('/api/posts', {
-      method: 'POST',
-      body: formData,
+    await createPost({
+      title: data.title,
+      tags: data.tags.map((tag: any) => tag.value),
+      content: data.content,
+      previewImage: fileRef.current?.files?.[0],
     });
-
-    const result = await response.json();
-    if (result.id) router.push(`/posts/${result.id}`);
   };
-  // TODO: Minsu Source map test
+
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.title}>글 생성하기</h2>
