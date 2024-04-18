@@ -1,4 +1,4 @@
-import { Post } from '.';
+import { Post } from '@/types';
 
 export type PostListProps = {
   tag?: string;

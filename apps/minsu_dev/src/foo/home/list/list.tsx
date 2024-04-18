@@ -1,27 +1,11 @@
 'use client';
+
 import { FC, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { getPosts } from '@/utils/supabase/post';
-import { QUERY_KEYS } from '@/utils/supabase/queryKey';
-import {
-  FetchPostsParams,
-  FetchPostsResult,
-  PostListProps,
-} from '@/types/post';
 import styles from './list.module.css';
 import { PostCard } from '@/components/common/post/card';
-
-const fetchPosts = async ({
-  tag,
-  pageParam = 0,
-}: FetchPostsParams): Promise<FetchPostsResult> => {
-  const posts = await getPosts({ tag, page: pageParam });
-  return {
-    posts: posts || [],
-    nextPage: posts && posts.length === 10 ? pageParam + 10 : null,
-  };
-};
+import { useInfinitePosts } from './list.hooks';
+import { PostListProps } from './list.types';
 
 const PostList: FC<PostListProps> = ({ tag, initalPosts }) => {
   const { ref, inView } = useInView();
@@ -29,23 +13,8 @@ const PostList: FC<PostListProps> = ({ tag, initalPosts }) => {
     data: postPages,
     fetchNextPage,
     hasNextPage,
-  } = useInfiniteQuery({
-    queryKey: [QUERY_KEYS.POSTS, tag],
-    queryFn: ({ pageParam }) => fetchPosts({ tag, pageParam }),
-    initialData: !!initalPosts
-      ? {
-          pages: [
-            {
-              posts: initalPosts,
-              nextPage: initalPosts.length === 10 ? 10 : null,
-            },
-          ],
-          pageParams: [0],
-        }
-      : undefined,
-    initialPageParam: 0,
-    getNextPageParam: lastPage => lastPage.nextPage,
-  });
+    // @ts-ignore useInfiniteQuery query type added later
+  } = useInfinitePosts(tag, initalPosts);
 
   useEffect(() => {
     if (inView && hasNextPage) fetchNextPage();
