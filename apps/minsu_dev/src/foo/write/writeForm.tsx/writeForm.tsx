@@ -1,6 +1,5 @@
 'use client';
 
-import Input from '@/components/input';
 import { MarkdownEditor } from '@/components/markdown';
 import { useTags } from '@/utils/supabase/post';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,6 +10,7 @@ import { Controller, useForm } from 'react-hook-form';
 import Button from '@/components/button';
 import styles from './writeForm.module.css';
 import { useCreatePost } from './writeForm.hooks';
+import { Input } from '@/components/input';
 
 const schema = yup.object({
   title: yup.string().required('제목을 입력해주세요.'),

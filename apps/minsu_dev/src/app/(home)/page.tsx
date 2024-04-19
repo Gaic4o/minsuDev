@@ -1,7 +1,7 @@
 import { createClient } from '@/utils/supabase/server';
 import { cookies } from 'next/headers';
-import { PostList } from '@/foo/home/list';
-import styles from '@/foo/layout.module.css';
+import { PostList } from '@/foo/home/postList';
+import styles from '@/foo/layout/layout.module.css';
 
 export default async function Home() {
   const supabase = createClient(cookies());
