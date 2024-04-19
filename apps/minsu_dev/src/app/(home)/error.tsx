@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import styles from './home.module.css';
+import Button from '@/components/button';
 
 export default function Error({
   error,
@@ -19,9 +20,9 @@ export default function Error({
       <h2 className={styles.errorTitle}>
         포스트 리스트를 가져오는 중 에러가 발생했습니다.
       </h2>
-      <button className={styles.errorButton} onClick={() => reset()}>
+      <Button className={styles.errorButton} onClick={() => reset()}>
         다시 시도하세요.
-      </button>
+      </Button>
     </div>
   );
 }

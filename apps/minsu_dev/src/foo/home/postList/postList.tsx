@@ -2,10 +2,10 @@
 
 import { FC, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import styles from './list.module.css';
-import { PostCard } from '@/components/common/post/card';
-import { useInfinitePosts } from './list.hooks';
-import { PostListProps } from './list.types';
+import styles from './postList.module.css';
+import { PostCard } from '@/components/post/card';
+import { useInfinitePosts } from './postList.hooks';
+import { PostListProps } from './postList.types';
 
 const PostList: FC<PostListProps> = ({ tag, initialPosts }) => {
   const { ref, inView } = useInView();

@@ -1,8 +1,8 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import Button from '@/components/common/button';
-import Input from '@/components/common/input';
+import Button from '@/components/button';
+import { Input } from '@/components/input';
 import styles from './loginForm.module.css';
 import { LoginFormInputs } from './loginForm.types';
 import { useLogin } from './loginForm.hooks';

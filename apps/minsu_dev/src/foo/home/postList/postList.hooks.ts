@@ -1,7 +1,7 @@
-import { getPosts } from '@/utils/supabase/post';
-import { QUERY_KEYS } from '@/utils/supabase/queryKey';
+import { getPosts } from '@/supabase/post';
+import { QUERY_KEYS } from '@/supabase/queryKey';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { FetchPostsParams, FetchPostsResult } from './list.types';
+import { FetchPostsParams, FetchPostsResult } from './postList.types';
 
 export const fetchPosts = async ({
   tag,

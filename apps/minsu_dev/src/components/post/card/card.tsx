@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { truncate } from '@/utils';
+import { truncate } from './card.utils';
 import { PostCardProps, PostContentProps, PostImageProps } from './card.type';
 import styles from './card.module.css';
 

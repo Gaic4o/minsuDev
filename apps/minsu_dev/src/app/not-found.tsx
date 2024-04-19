@@ -1,4 +1,4 @@
-import styles from '../foo/layout.module.css';
+import styles from '@/foo/layout/layout.module.css';
 
 export default function _404() {
   return (

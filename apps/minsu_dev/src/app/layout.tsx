@@ -1,11 +1,10 @@
 import { Montserrat } from 'next/font/google';
-import './globals.css';
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
 import Providers from '@/foo/provider';
 import StyledComponentsRegistry from '@/foo/provider/styledComponentsRegistry';
-import styles from '../foo/layout.module.css';
 import { Metadata } from 'next';
+import { Footer, Header } from '@/foo/layout';
+import styles from '@/foo/layout/layout.module.css';
+import './globals.css';
 
 const montserrat = Montserrat({
   subsets: ['latin'],

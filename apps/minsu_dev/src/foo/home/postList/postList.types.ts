@@ -1,4 +1,4 @@
-import { Post } from '@/types';
+import { Post } from '@/supabase/types';
 
 export type PostListProps = {
   tag?: string;
