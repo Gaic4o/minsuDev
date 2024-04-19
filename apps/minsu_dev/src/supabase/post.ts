@@ -3,6 +3,7 @@ import { createClient as createServerClient } from './server';
 import { cache } from 'react';
 import { createClient } from '@/supabase/client';
 import { useQuery } from '@tanstack/react-query';
+import { QUERY_KEYS } from './queryKey';
 
 const initializeSupabase = () =>
   typeof window === 'undefined' ? createServerClient() : createBrowserClient();
@@ -45,7 +46,7 @@ export const getPost = cache(async (id: string) => {
 
 export const useTags = () =>
   useQuery({
-    queryKey: ['tags'],
+    queryKey: [QUERY_KEYS.TAG],
     queryFn: async () => {
       const { data } = await supabase.from('Post').select('tags');
       return Array.from(new Set(data?.flatMap(d => JSON.parse(d.tags))));
