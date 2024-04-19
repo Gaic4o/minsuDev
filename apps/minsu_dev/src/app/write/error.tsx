@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
-import styles from './home.module.css';
+import styles from './write.module.css';
 import Button from '@/components/button';
 
-/* TODO: we will add a common UI style to each page and later make the error UI different for each page. */
+// TODO: we will add a common UI style to each page and later make the error UI different for each page.
 export default function Error({
   error,
   reset,
@@ -18,9 +18,7 @@ export default function Error({
 
   return (
     <div className={styles.errorContainer}>
-      <h2 className={styles.errorTitle}>
-        포스트 리스트를 가져오는 중 에러가 발생했습니다.
-      </h2>
+      <h2 className={styles.errorTitle}>포스트 작성 중 실패했습니다.</h2>
       <Button className={styles.errorButton} onClick={() => reset()}>
         다시 시도하세요.
       </Button>
