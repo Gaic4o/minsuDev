@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.formContainer {
+  margin-top: 2.5rem;
+}
+
 .inputContainer {
   display: flex;
   flex-direction: column;
