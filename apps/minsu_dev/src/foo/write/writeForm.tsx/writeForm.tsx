@@ -1,7 +1,7 @@
 'use client';
 
 import Input from '@/components/input';
-import { MarkdownEditor } from '@/components/common/markdown';
+import { MarkdownEditor } from '@/components/markdown';
 import { useTags } from '@/utils/supabase/post';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';

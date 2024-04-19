@@ -1,4 +1,4 @@
-import { MarkdownViewer } from '@/components/common/markdown';
+import { MarkdownViewer } from '@/components/markdown';
 import ContentComment from '@/foo/content/comment';
 import { getPost } from '@/utils/supabase/post';
 import { format } from 'date-fns';
