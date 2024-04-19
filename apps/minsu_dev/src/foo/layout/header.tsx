@@ -4,11 +4,11 @@ import styles from './header.module.css';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div>
+      <h1>
         <Link className={styles.title} prefetch href={'/'} passHref>
           minsuDev
         </Link>
-      </div>
+      </h1>
       <div>
         <Link
           href="https://github.com/Gaic4o"
