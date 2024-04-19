@@ -11,11 +11,9 @@ type TagProps = {
 
 const Tag: FC<TagProps> = ({ name, id }) => {
   return (
-    <Fragment>
-      <Link href={`/posts/${id}`} passHref className={styles.button}>
-        #{name}
-      </Link>
-    </Fragment>
+    <Link href={`/posts/${id}`} passHref className={styles.button}>
+      #{name}
+    </Link>
   );
 };
 

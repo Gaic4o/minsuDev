@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import styles from './id.module.css';
-import Button from '@/components/button';
+import { Button } from '@/components/button';
 
 // TODO: we will add a common UI style to each page and later make the error UI different for each page.
 export default function Error({
