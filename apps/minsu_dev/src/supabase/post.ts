@@ -1,7 +1,7 @@
 import { createClient as createBrowserClient } from './client';
 import { createClient as createServerClient } from './server';
 import { cache } from 'react';
-import { createClient } from '@/utils/supabase/client';
+import { createClient } from '@/supabase/client';
 import { useQuery } from '@tanstack/react-query';
 
 const initializeSupabase = () =>

@@ -1,5 +1,5 @@
-import { PostRequest } from '@/types';
-import { createClient } from '@/utils/supabase/server';
+import { PostRequest } from '@/supabase/types';
+import { createClient } from '@/supabase/server';
 import { format } from 'date-fns';
 import { cookies } from 'next/headers';
 import type { NextRequest } from 'next/server';

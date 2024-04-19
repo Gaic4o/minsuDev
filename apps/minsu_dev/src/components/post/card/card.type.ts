@@ -1,4 +1,4 @@
-import { Post } from '@/types';
+import { Post } from '@/supabase/types';
 
 export interface PostImageProps {
   url: string;

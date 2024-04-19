@@ -1,7 +1,7 @@
 'use client';
 
 import { MarkdownEditor } from '@/components/markdown';
-import { useTags } from '@/utils/supabase/post';
+import { useTags } from '@/supabase/post';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRef } from 'react';

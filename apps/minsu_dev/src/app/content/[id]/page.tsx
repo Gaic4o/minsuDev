@@ -1,6 +1,6 @@
 import { MarkdownViewer } from '@/components/markdown';
 import ContentComment from '@/foo/content/comment';
-import { getPost } from '@/utils/supabase/post';
+import { getPost } from '@/supabase/post';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';

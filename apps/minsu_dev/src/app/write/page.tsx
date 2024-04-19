@@ -1,4 +1,4 @@
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/supabase/server';
 import { cookies } from 'next/headers';
 import { WriteForm } from '@/foo/write/writeForm.tsx';
 import { redirect } from 'next/navigation';
