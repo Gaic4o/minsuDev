@@ -8,7 +8,7 @@ import * as yup from 'yup';
 import { useRef } from 'react';
 import ReactSelect from 'react-select/creatable';
 import { Controller, useForm } from 'react-hook-form';
-import Button from '@/components/common/button';
+import Button from '@/components/button';
 import styles from './writeForm.module.css';
 import { useCreatePost } from './writeForm.hooks';
 
