@@ -21,7 +21,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <div className={styles.loginFormContainer}>
         <h2 className={styles.formTitle}>로그인</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
