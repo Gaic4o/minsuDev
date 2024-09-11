@@ -1,9 +1,9 @@
-import { Montserrat } from 'next/font/google';
+import { Footer, Header } from '@/foo/layout';
+import styles from '@/foo/layout/layout.module.css';
 import Providers from '@/foo/provider';
 import StyledComponentsRegistry from '@/foo/provider/styledComponentsRegistry';
 import { Metadata } from 'next';
-import { Footer, Header } from '@/foo/layout';
-import styles from '@/foo/layout/layout.module.css';
+import { Montserrat } from 'next/font/google';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   description: '민수의 개발 블로그 입니다.',
   icons: {
     icon: '/fire.png',
+  },
+  openGraph: {
+    images: [
+      {
+        url: '/test.png',
+        alt: 'test',
+      },
+    ],
   },
 };
 
